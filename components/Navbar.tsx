@@ -372,16 +372,24 @@ function DropdownMenu({
         className={cn(
           "absolute right-0 top-full mt-2 w-80 origin-top",
           "rounded-[1.5rem]",
-          "border border-white/50 bg-white/55",
+          // High-opacity white base so content behind never bleeds through
+          "border border-white/70 bg-white/90",
           "p-2",
-          "shadow-[0_22px_70px_rgba(15,23,42,0.18),inset_0_1px_0_rgba(255,255,255,0.7)]",
-          "backdrop-blur-3xl",
+          // Layered shadow: deep ambient lift + close contact shadow + specular inset
+          "shadow-[0_24px_64px_rgba(15,23,42,0.22),0_2px_12px_rgba(15,23,42,0.1),inset_0_1px_0_rgba(255,255,255,0.95)]",
+          "backdrop-blur-2xl",
           "transition-all duration-200",
           open
             ? "pointer-events-auto scale-100 translate-y-0 opacity-100"
             : "pointer-events-none scale-95 translate-y-2 opacity-0",
         )}
       >
+        {/* Specular top-edge highlight */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-5 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-white to-transparent"
+        />
+
         {items.map((item) => {
           const active = pathname === item.route;
 
@@ -395,24 +403,26 @@ function DropdownMenu({
                 "transition-all duration-150",
                 active
                   ? "bg-slate-950 text-white shadow-sm"
-                  : "text-slate-700 hover:bg-white/60 hover:text-slate-950",
+                  : "text-slate-800 hover:bg-slate-100/80 hover:text-slate-950",
               )}
             >
               <span
                 className={cn(
                   "mt-0.5 grid h-7 w-7 shrink-0 place-items-center rounded-xl",
-                  active ? "bg-white/15 text-white" : "bg-slate-950/5 text-sky-700",
+                  active ? "bg-white/15 text-white" : "bg-sky-100 text-sky-700",
                 )}
               >
                 {getItemIcon(item.title)}
               </span>
 
               <span className="min-w-0">
-                <span className="block truncate font-medium">{item.title}</span>
+                <span className="block truncate text-[0.8125rem] font-semibold">
+                  {item.title}
+                </span>
                 <span
                   className={cn(
-                    "mt-0.5 block truncate text-xs",
-                    active ? "text-white/65" : "text-slate-500",
+                    "mt-0.5 block truncate text-xs font-medium",
+                    active ? "text-white/60" : "text-slate-500",
                   )}
                 >
                   {category}
@@ -466,37 +476,47 @@ function MobileNavbar({ pathname }: { pathname: string }) {
         className={cn(
           "absolute left-3 right-3 top-[5.25rem] origin-top",
           "rounded-[1.75rem]",
-          "border border-white/50 bg-white/70",
+          "border border-white/70 bg-white/90",
           "p-3",
-          "shadow-[0_24px_80px_rgba(15,23,42,0.2),inset_0_1px_0_rgba(255,255,255,0.8)]",
-          "backdrop-blur-3xl",
+          "shadow-[0_24px_80px_rgba(15,23,42,0.22),0_2px_12px_rgba(15,23,42,0.08),inset_0_1px_0_rgba(255,255,255,0.95)]",
+          "backdrop-blur-2xl",
           "transition-all duration-200",
           open
             ? "pointer-events-auto scale-100 translate-y-0 opacity-100"
             : "pointer-events-none scale-95 -translate-y-3 opacity-0",
         )}
       >
+        {/* Specular top-edge highlight */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-6 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-white to-transparent"
+        />
+
         {/* Home link */}
         <Link
           href="/"
           onClick={() => setOpen(false)}
           className={cn(
             "mb-2 flex items-center gap-3 rounded-2xl px-3 py-3",
-            "text-sm font-medium transition-all duration-150",
+            "text-sm font-semibold transition-all duration-150",
             pathname === "/"
               ? "bg-slate-950 text-white shadow-sm"
-              : "text-slate-700 hover:bg-white/60",
+              : "text-slate-800 hover:bg-slate-100/80 hover:text-slate-950",
           )}
         >
           <Home className="h-4 w-4" aria-hidden="true" />
           Home
         </Link>
 
+        {/* Divider */}
+        <div className="mx-3 mb-3 h-px bg-slate-200/70" aria-hidden="true" />
+
         {/* Scrollable group list */}
-        <div className="max-h-[calc(100svh-10rem)] space-y-3 overflow-y-auto pr-1">
+        <div className="max-h-[calc(100svh-10rem)] space-y-4 overflow-y-auto pr-1">
           {Object.entries(visualizationGroups).map(([category, items]) => (
             <section key={category}>
-              <div className="mb-1 flex items-center gap-2 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+              {/* Category label */}
+              <div className="mb-1 flex items-center gap-2 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
                 {getCategoryIconSm(category)}
                 {category}
               </div>
@@ -512,16 +532,16 @@ function MobileNavbar({ pathname }: { pathname: string }) {
                       onClick={() => setOpen(false)}
                       className={cn(
                         "flex items-center gap-3 rounded-2xl px-3 py-2.5",
-                        "text-sm font-medium transition-all duration-150",
+                        "text-sm font-semibold transition-all duration-150",
                         active
                           ? "bg-slate-950 text-white shadow-sm"
-                          : "text-slate-700 hover:bg-white/60",
+                          : "text-slate-800 hover:bg-slate-100/80 hover:text-slate-950",
                       )}
                     >
                       <span
                         className={cn(
                           "grid h-8 w-8 shrink-0 place-items-center rounded-xl",
-                          active ? "bg-white/15 text-white" : "bg-slate-950/5 text-sky-700",
+                          active ? "bg-white/15 text-white" : "bg-sky-100 text-sky-700",
                         )}
                       >
                         {getItemIcon(item.title)}
