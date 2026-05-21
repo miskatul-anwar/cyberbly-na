@@ -372,24 +372,15 @@ function DropdownMenu({
         className={cn(
           "absolute right-0 top-full mt-2 w-80 origin-top",
           "rounded-[1.5rem]",
-          // High-opacity white base so content behind never bleeds through
-          "border border-white/70 bg-white/90",
+          "border border-slate-200 bg-white",
           "p-2",
-          // Layered shadow: deep ambient lift + close contact shadow + specular inset
-          "shadow-[0_24px_64px_rgba(15,23,42,0.22),0_2px_12px_rgba(15,23,42,0.1),inset_0_1px_0_rgba(255,255,255,0.95)]",
-          "backdrop-blur-2xl",
+          "shadow-[0_24px_64px_rgba(15,23,42,0.18),0_2px_12px_rgba(15,23,42,0.08)]",
           "transition-all duration-200",
           open
             ? "pointer-events-auto scale-100 translate-y-0 opacity-100"
             : "pointer-events-none scale-95 translate-y-2 opacity-0",
         )}
       >
-        {/* Specular top-edge highlight */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-5 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-white to-transparent"
-        />
-
         {items.map((item) => {
           const active = pathname === item.route;
 
@@ -476,22 +467,15 @@ function MobileNavbar({ pathname }: { pathname: string }) {
         className={cn(
           "absolute left-3 right-3 top-[5.25rem] origin-top",
           "rounded-[1.75rem]",
-          "border border-white/70 bg-white/90",
+          "border border-slate-200 bg-white",
           "p-3",
-          "shadow-[0_24px_80px_rgba(15,23,42,0.22),0_2px_12px_rgba(15,23,42,0.08),inset_0_1px_0_rgba(255,255,255,0.95)]",
-          "backdrop-blur-2xl",
+          "shadow-[0_24px_80px_rgba(15,23,42,0.18),0_2px_12px_rgba(15,23,42,0.08)]",
           "transition-all duration-200",
           open
             ? "pointer-events-auto scale-100 translate-y-0 opacity-100"
             : "pointer-events-none scale-95 -translate-y-3 opacity-0",
         )}
       >
-        {/* Specular top-edge highlight */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-6 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-white to-transparent"
-        />
-
         {/* Home link */}
         <Link
           href="/"
