@@ -29,9 +29,9 @@ export default function Hero() {
 
       <div className="relative max-w-4xl">
         {/* Eyebrow label */}
-        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sky-600">
+        {/* <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-sky-600">
           Supplementary Material
-        </p>
+        </p> */}
 
         <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 md:text-6xl">
           Supplementary Visualization Viewer
