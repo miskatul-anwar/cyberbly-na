@@ -9,65 +9,28 @@ import {
   Menu,
   X,
   ChevronDown,
-  // Category icons
-  BarChart2,
-  Map,
   Share2,
-  Table2,
-  FlaskConical,
-  Layers,
-  // Item-level icons
-  BarChart,
-  LineChart,
-  PieChart,
-  ScatterChart,
-  AreaChart,
-  Radar,
-  TrendingUp,
-  Activity,
-  Gauge,
-  Grid3x3,
-  MapPin,
-  Navigation,
-  Compass,
+  Users,
+  Waves,
   GitBranch,
-  Workflow,
-  TreePine,
-  ListTree,
-  Braces,
-  Kanban,
-  CalendarDays,
-  Rows,
-  Columns,
-  FlaskRound,
-  Thermometer,
-  Zap,
-  LayoutGrid,
+  Boxes,
+  Layers,
 } from "lucide-react";
 import { visualizationGroups } from "@/lib/visualizations";
 import { cn } from "@/lib/utils";
 
 // ---------------------------------------------------------------------------
-// Icon helpers — same inline pattern as VisualizationViewer / VisualizationCard
+// Icon helpers — inline JSX, same pattern as VisualizationViewer / Card
 // ---------------------------------------------------------------------------
 
 function getCategoryIcon(category: string) {
   switch (category) {
-    case "Charts":
-    case "Bar Charts":
-      return <BarChart2 className="h-4 w-4" aria-hidden="true" />;
-    case "Maps":
-    case "Geo & Maps":
-      return <Map className="h-4 w-4" aria-hidden="true" />;
-    case "Networks":
-    case "Graph":
+    case "Network Structure":
       return <Share2 className="h-4 w-4" aria-hidden="true" />;
-    case "Tables":
-    case "Data Tables":
-      return <Table2 className="h-4 w-4" aria-hidden="true" />;
-    case "Scientific":
-    case "Science":
-      return <FlaskConical className="h-4 w-4" aria-hidden="true" />;
+    case "Community Interaction":
+      return <Users className="h-4 w-4" aria-hidden="true" />;
+    case "Diffusion Visualization":
+      return <Waves className="h-4 w-4" aria-hidden="true" />;
     default:
       return <Layers className="h-4 w-4" aria-hidden="true" />;
   }
@@ -75,21 +38,12 @@ function getCategoryIcon(category: string) {
 
 function getCategoryIconSm(category: string) {
   switch (category) {
-    case "Charts":
-    case "Bar Charts":
-      return <BarChart2 className="h-3 w-3" aria-hidden="true" />;
-    case "Maps":
-    case "Geo & Maps":
-      return <Map className="h-3 w-3" aria-hidden="true" />;
-    case "Networks":
-    case "Graph":
+    case "Network Structure":
       return <Share2 className="h-3 w-3" aria-hidden="true" />;
-    case "Tables":
-    case "Data Tables":
-      return <Table2 className="h-3 w-3" aria-hidden="true" />;
-    case "Scientific":
-    case "Science":
-      return <FlaskConical className="h-3 w-3" aria-hidden="true" />;
+    case "Community Interaction":
+      return <Users className="h-3 w-3" aria-hidden="true" />;
+    case "Diffusion Visualization":
+      return <Waves className="h-3 w-3" aria-hidden="true" />;
     default:
       return <Layers className="h-3 w-3" aria-hidden="true" />;
   }
@@ -97,88 +51,23 @@ function getCategoryIconSm(category: string) {
 
 function getItemIcon(title: string) {
   switch (title) {
-    // Charts
-    case "Bar Chart":
-    case "Grouped Bar":
-    case "Stacked Bar":
-    case "Histogram":
-      return <BarChart className="h-4 w-4" aria-hidden="true" />;
-    case "Line Chart":
-    case "Multi-Line":
-      return <LineChart className="h-4 w-4" aria-hidden="true" />;
-    case "Pie Chart":
-    case "Donut":
-      return <PieChart className="h-4 w-4" aria-hidden="true" />;
-    case "Scatter Plot":
-    case "Bubble":
-      return <ScatterChart className="h-4 w-4" aria-hidden="true" />;
-    case "Area Chart":
-    case "Stacked Area":
-      return <AreaChart className="h-4 w-4" aria-hidden="true" />;
-    case "Radar":
-    case "Spider Chart":
-      return <Radar className="h-4 w-4" aria-hidden="true" />;
-    case "Waterfall":
-    case "Trend Line":
-    case "Funnel":
-      return <TrendingUp className="h-4 w-4" aria-hidden="true" />;
-    case "Sparkline":
-      return <Activity className="h-4 w-4" aria-hidden="true" />;
-    case "Gauge Chart":
-    case "Gauge":
-      return <Gauge className="h-4 w-4" aria-hidden="true" />;
-    case "Heat Map":
-    case "Heatmap":
-    case "Matrix Table":
-      return <Grid3x3 className="h-4 w-4" aria-hidden="true" />;
-    // Maps
-    case "Choropleth Map":
-    case "Choropleth":
-    case "Point Map":
-      return <MapPin className="h-4 w-4" aria-hidden="true" />;
-    case "Bubble Map":
-      return <Navigation className="h-4 w-4" aria-hidden="true" />;
-    case "Satellite View":
-      return <Compass className="h-4 w-4" aria-hidden="true" />;
-    // Networks
-    case "Force Graph":
-    case "Node-Link":
-    case "Network Graph":
-      return <Share2 className="h-4 w-4" aria-hidden="true" />;
-    case "Tree":
-    case "Tree Map":
-    case "Treemap":
-      return <TreePine className="h-4 w-4" aria-hidden="true" />;
-    case "Hierarchy":
-      return <ListTree className="h-4 w-4" aria-hidden="true" />;
-    case "Dependency Graph":
-    case "Sankey":
-      return <Workflow className="h-4 w-4" aria-hidden="true" />;
-    case "Arc Diagram":
-      return <Braces className="h-4 w-4" aria-hidden="true" />;
-    case "Node-Link Diagram":
+    // Network Structure
+    case "Perpetrator Similarity Network":
       return <GitBranch className="h-4 w-4" aria-hidden="true" />;
-    // Tables
-    case "Kanban Board":
-      return <Kanban className="h-4 w-4" aria-hidden="true" />;
-    case "Gantt Chart":
-    case "Timeline":
-    case "Calendar":
-      return <CalendarDays className="h-4 w-4" aria-hidden="true" />;
-    case "Pivot Table":
-      return <Rows className="h-4 w-4" aria-hidden="true" />;
-    case "Cross Tab":
-      return <Columns className="h-4 w-4" aria-hidden="true" />;
-    // Scientific
-    case "Thermometer":
-    case "Temperature":
-      return <Thermometer className="h-4 w-4" aria-hidden="true" />;
-    case "Energy":
-      return <Zap className="h-4 w-4" aria-hidden="true" />;
-    case "Biology":
-      return <FlaskRound className="h-4 w-4" aria-hidden="true" />;
+    case "Perpetrator Community Network":
+      return <Share2 className="h-4 w-4" aria-hidden="true" />;
+    case "Perpetrator Sub-community Network":
+      return <Boxes className="h-4 w-4" aria-hidden="true" />;
+    // Community Interaction
+    case "Community Behavior Graph":
+      return <Users className="h-4 w-4" aria-hidden="true" />;
+    case "Community Context Graph":
+      return <Network className="h-4 w-4" aria-hidden="true" />;
+    // Diffusion Visualization
+    case "Diffusion — All Methods":
+      return <Waves className="h-4 w-4" aria-hidden="true" />;
     default:
-      return <LayoutGrid className="h-4 w-4" aria-hidden="true" />;
+      return <Layers className="h-4 w-4" aria-hidden="true" />;
   }
 }
 
@@ -435,7 +324,9 @@ function MobileNavbar({ pathname }: { pathname: string }) {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
@@ -455,10 +346,11 @@ function MobileNavbar({ pathname }: { pathname: string }) {
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400",
         )}
       >
-        {open
-          ? <X className="h-5 w-5" aria-hidden="true" />
-          : <Menu className="h-5 w-5" aria-hidden="true" />
-        }
+        {open ? (
+          <X className="h-5 w-5" aria-hidden="true" />
+        ) : (
+          <Menu className="h-5 w-5" aria-hidden="true" />
+        )}
       </button>
 
       {/* Mobile sheet */}
@@ -525,7 +417,9 @@ function MobileNavbar({ pathname }: { pathname: string }) {
                       <span
                         className={cn(
                           "grid h-8 w-8 shrink-0 place-items-center rounded-xl",
-                          active ? "bg-white/15 text-white" : "bg-sky-100 text-sky-700",
+                          active
+                            ? "bg-white/15 text-white"
+                            : "bg-sky-100 text-sky-700",
                         )}
                       >
                         {getItemIcon(item.title)}

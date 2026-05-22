@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ChevronRight, BarChart2, Share2, Map, Table2, FlaskConical, Layers } from "lucide-react";
+import { ChevronRight, Share2, Users, Waves, Layers } from "lucide-react";
 import type { Visualization } from "@/lib/visualizations";
 import { cn } from "@/lib/utils";
 
@@ -9,28 +9,20 @@ type VisualizationCardProps = {
 
 function getCategoryIcon(category: string) {
   switch (category) {
-    case "Charts":
-    case "Bar Charts":
-      return <BarChart2 className="h-4 w-4" aria-hidden="true" />;
-    case "Networks":
-    case "Graph":
     case "Network Structure":
       return <Share2 className="h-4 w-4" aria-hidden="true" />;
-    case "Maps":
-    case "Geo & Maps":
-      return <Map className="h-4 w-4" aria-hidden="true" />;
-    case "Tables":
-    case "Data Tables":
-      return <Table2 className="h-4 w-4" aria-hidden="true" />;
-    case "Scientific":
-    case "Science":
-      return <FlaskConical className="h-4 w-4" aria-hidden="true" />;
+    case "Community Interaction":
+      return <Users className="h-4 w-4" aria-hidden="true" />;
+    case "Diffusion Visualization":
+      return <Waves className="h-4 w-4" aria-hidden="true" />;
     default:
       return <Layers className="h-4 w-4" aria-hidden="true" />;
   }
 }
 
-export default function VisualizationCard({ visualization }: VisualizationCardProps) {
+export default function VisualizationCard({
+  visualization,
+}: VisualizationCardProps) {
   return (
     <article
       className={cn(

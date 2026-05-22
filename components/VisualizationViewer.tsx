@@ -1,5 +1,12 @@
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, BarChart2, Share2, Map, Table2, FlaskConical, Layers } from "lucide-react";
+import {
+  ArrowLeft,
+  ExternalLink,
+  Share2,
+  Users,
+  Waves,
+  Layers,
+} from "lucide-react";
 import type { Visualization } from "@/lib/visualizations";
 import { cn } from "@/lib/utils";
 
@@ -9,29 +16,20 @@ type VisualizationViewerProps = {
 
 function getCategoryIcon(category: string) {
   switch (category) {
-    case "Charts":
-    case "Bar Charts":
-      return <BarChart2 className="h-4 w-4" aria-hidden="true" />;
-    case "Networks":
-    case "Graph":
     case "Network Structure":
-    case "Community Interaction":
       return <Share2 className="h-4 w-4" aria-hidden="true" />;
-    case "Maps":
-    case "Geo & Maps":
-      return <Map className="h-4 w-4" aria-hidden="true" />;
-    case "Tables":
-    case "Data Tables":
-      return <Table2 className="h-4 w-4" aria-hidden="true" />;
-    case "Scientific":
-    case "Science":
-      return <FlaskConical className="h-4 w-4" aria-hidden="true" />;
+    case "Community Interaction":
+      return <Users className="h-4 w-4" aria-hidden="true" />;
+    case "Diffusion Visualization":
+      return <Waves className="h-4 w-4" aria-hidden="true" />;
     default:
       return <Layers className="h-4 w-4" aria-hidden="true" />;
   }
 }
 
-export default function VisualizationViewer({ visualization }: VisualizationViewerProps) {
+export default function VisualizationViewer({
+  visualization,
+}: VisualizationViewerProps) {
   return (
     <article className="space-y-4">
       {/* Header card */}
@@ -43,14 +41,14 @@ export default function VisualizationViewer({ visualization }: VisualizationView
           "backdrop-blur-2xl p-6",
         )}
       >
-        {/* Ambient blobs — same language as Hero */}
+        {/* Ambient blobs */}
         <div
           aria-hidden="true"
-          className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-sky-200/40 blur-3xl pointer-events-none"
+          className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-sky-200/40 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-slate-200/60 blur-3xl pointer-events-none"
+          className="pointer-events-none absolute -bottom-20 left-8 h-48 w-48 rounded-full bg-slate-200/60 blur-3xl"
         />
         {/* Specular highlight */}
         <div
@@ -79,7 +77,7 @@ export default function VisualizationViewer({ visualization }: VisualizationView
           </div>
 
           {/* Action buttons */}
-          <div className="flex flex-wrap gap-3 shrink-0">
+          <div className="flex shrink-0 flex-wrap gap-3">
             <Link
               href="/"
               className={cn(
@@ -88,7 +86,7 @@ export default function VisualizationViewer({ visualization }: VisualizationView
                 "px-4 py-2.5 text-sm font-semibold text-white",
                 "shadow-[0_2px_8px_rgba(15,23,42,0.3)]",
                 "transition-all duration-200",
-                "hover:-translate-y-0.5 hover:bg-slate-800 hover:border-slate-800",
+                "hover:-translate-y-0.5 hover:border-slate-800 hover:bg-slate-800",
                 "hover:shadow-[0_6px_16px_rgba(15,23,42,0.35)]",
                 "focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2",
               )}
@@ -107,7 +105,7 @@ export default function VisualizationViewer({ visualization }: VisualizationView
                 "px-4 py-2.5 text-sm font-semibold text-slate-700",
                 "shadow-[0_2px_8px_rgba(15,23,42,0.06),inset_0_1px_0_rgba(255,255,255,0.7)]",
                 "backdrop-blur-xl transition-all duration-200",
-                "hover:-translate-y-0.5 hover:bg-white/70 hover:border-white/80",
+                "hover:-translate-y-0.5 hover:border-white/80 hover:bg-white/70",
                 "hover:shadow-[0_6px_16px_rgba(15,23,42,0.1)]",
                 "focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2",
               )}
