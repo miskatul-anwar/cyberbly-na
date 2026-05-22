@@ -42,14 +42,14 @@ export default function VisualizationCard({
       />
 
       {/* Category badge */}
-      <div className="flex items-center gap-2">
+      {/* <div className="flex items-center gap-2">
         <span className="inline-flex h-7 w-7 items-center justify-center rounded-xl bg-sky-100/80 text-sky-700 backdrop-blur-sm">
           {getCategoryIcon(visualization.category)}
         </span>
         <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-700">
           {visualization.category}
         </p>
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="mt-3 flex-1">
