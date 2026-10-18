@@ -93,7 +93,7 @@ export const visualizations: Visualization[] = [
     category: "Diffusion Visualization",
     route: "/visualizations/diffusion-all-methods",
     assetPath:
-      "/figures/diffusion_visualization/diffusion_community_0_all_methods.html",
+      "/figures/diffusion_visualization/diffusion_community_5_all_methods.html",
   },
 ];
 
