@@ -88,15 +88,13 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 px-3 pt-3">
+    <header className="sticky top-0 z-50">
       <nav
         aria-label="Primary navigation"
         className={cn(
-          "relative mx-auto max-w-6xl overflow-visible",
-          "rounded-[1.75rem]",
-          "border border-white/40",
-          "bg-white/25",
-          "shadow-[0_8px_32px_rgba(15,23,42,0.12),inset_0_1px_0_rgba(255,255,255,0.6)]",
+          "relative w-full overflow-visible",
+          "border-b border-white/40",
+          "bg-white/60 shadow-sm",
           "backdrop-blur-3xl",
         )}
       >
@@ -106,7 +104,7 @@ export default function Navbar() {
           className="pointer-events-none absolute inset-x-6 top-0 h-px rounded-full bg-gradient-to-r from-transparent via-white/70 to-transparent"
         />
 
-        <div className="flex h-16 items-center justify-between gap-3 px-3 sm:px-5">
+        <div className="flex h-16 items-center justify-between gap-3 px-4 sm:px-6">
           {/* Brand */}
           <BrandLogo />
 
@@ -380,7 +378,7 @@ function MobileNavbar({ pathname }: { pathname: string }) {
         id="mobile-menu"
         inert={!open}
         className={cn(
-          "absolute left-3 right-3 top-[5.25rem] origin-top",
+          "absolute left-3 right-3 top-full mt-2 origin-top",
           "rounded-[1.75rem]",
           "border border-slate-200 bg-white",
           "p-3",
