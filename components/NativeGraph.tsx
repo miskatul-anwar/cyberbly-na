@@ -107,6 +107,7 @@ export default function NativeGraph({ slug }: { slug: string }) {
   const [error, setError] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
   const [counts, setCounts] = useState<{ nodes: number; edges: number } | null>(null);
+  const [zoom, setZoom] = useState(100);
 
   const dataPath = useMemo(
     () =>
@@ -144,6 +145,8 @@ export default function NativeGraph({ slug }: { slug: string }) {
         const nodes = new library.DataSet<Node, "id">(payload.nodes);
         const edges = new library.DataSet<Edge, "id">(payload.edges);
         const network = new library.Network(containerRef.current, { nodes, edges }, payload.options);
+        network.on("zoom", () => setZoom(network.getScale() * 100));
+        setZoom(network.getScale() * 100);
         const runtime: Runtime = {
           network,
           nodes,
@@ -262,6 +265,13 @@ export default function NativeGraph({ slug }: { slug: string }) {
   }
 
   const currentMethod = DIFFUSION_METHODS.find((entry) => entry.id === method)!;
+  const zoomSliderValue = Math.round(Math.max(0, Math.min(100, Math.log(Math.max(zoom, 2) / 2) / Math.log(200) * 100)));
+
+  function changeZoom(value: number) {
+    const scale = 0.02 * Math.pow(200, value / 100);
+    setZoom(scale * 100);
+    runtimeRef.current?.network.moveTo({ scale, animation: false });
+  }
 
   return (
     <div className="relative">
@@ -270,11 +280,29 @@ export default function NativeGraph({ slug }: { slug: string }) {
           <p className="text-sm font-semibold text-slate-950">Interactive network</p>
           <p className="text-xs text-slate-500">Pan, zoom, and hover for graph details.</p>
         </div>
-        {counts && (
-          <p className="rounded-full bg-white/70 px-3 py-1 text-xs font-medium text-slate-600" role="status">
-            {counts.nodes.toLocaleString()} nodes · {counts.edges.toLocaleString()} edges
-          </p>
-        )}
+        <div className="flex flex-wrap items-center gap-4">
+          {counts && (
+            <p className="rounded-full bg-white/70 px-3 py-1 text-xs font-medium text-slate-600" role="status">
+              {counts.nodes.toLocaleString()} nodes · {counts.edges.toLocaleString()} edges
+            </p>
+          )}
+          <label className="flex items-center gap-3 text-xs font-semibold text-slate-600">
+            <span>Zoom</span>
+            <input
+              type="range"
+              className="theme-slider w-28 sm:w-36"
+              min="0"
+              max="100"
+              value={zoomSliderValue}
+              onChange={(event) => changeZoom(Number(event.target.value))}
+              disabled={loading || Boolean(error)}
+              aria-label="Graph zoom"
+              aria-valuetext={`${Math.round(zoom)}%`}
+              style={{ "--slider-progress": `${zoomSliderValue}%` } as React.CSSProperties}
+            />
+            <output className="w-10 text-right tabular-nums">{Math.round(zoom)}%</output>
+          </label>
+        </div>
       </div>
 
       {isDiffusion && (

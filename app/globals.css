@@ -12,6 +12,83 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Keep scroll controls consistent with the slate and sky interface. */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #94a3b8 rgba(226, 232, 240, 0.55);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.55);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: #94a3b8;
+  background-clip: padding-box;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #0284c7;
+}
+
+input[type="range"].theme-slider {
+  appearance: none;
+  -webkit-appearance: none;
+  height: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    #38bdf8 0%,
+    #38bdf8 var(--slider-progress, 0%),
+    #e2e8f0 var(--slider-progress, 0%),
+    #e2e8f0 100%
+  );
+  cursor: pointer;
+}
+
+input[type="range"].theme-slider:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+input[type="range"].theme-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #0284c7;
+  box-shadow: 0 1px 5px rgba(15, 23, 42, 0.25);
+}
+
+input[type="range"].theme-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: 3px solid white;
+  border-radius: 50%;
+  background: #0284c7;
+  box-shadow: 0 1px 5px rgba(15, 23, 42, 0.25);
+}
+
+input[type="range"].theme-slider::-moz-range-track {
+  border: 0;
+  background: transparent;
+}
+
+input[type="range"].theme-slider:focus-visible {
+  outline: 2px solid #0284c7;
+  outline-offset: 4px;
+}
+
 body {
   min-height: 100vh;
   margin: 0;

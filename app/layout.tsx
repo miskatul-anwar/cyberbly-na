@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import "./globals.css";
 import "vis-network/styles/vis-network.css";
+import "./globals.css";
 import Navbar from "@/components/Navbar";
 import BottomDock from "@/components/BottomDock";
 
