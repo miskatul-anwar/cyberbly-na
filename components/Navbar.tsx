@@ -138,9 +138,9 @@ export default function Navbar() {
 // ---------------------------------------------------------------------------
 function BrandLogo() {
   return (
-    <a
-      href="https://bdai.bike-csecu.com"
-      aria-label="Visit BDAI website"
+    <Link
+      href="/"
+      aria-label="Go to home page"
       className={cn(
         "group flex min-w-0 items-center gap-3 rounded-2xl px-2 py-2",
         "outline-none transition-all duration-200",
@@ -163,7 +163,7 @@ function BrandLogo() {
           Anonymous review-only access
         </span>
       </span>
-    </a>
+    </Link>
   );
 }
 
