@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -148,16 +149,13 @@ function BrandLogo() {
         "hover:bg-white/30 focus-visible:ring-2 focus-visible:ring-sky-400",
       )}
     >
-      <span
-        className={cn(
-          "grid h-10 w-10 shrink-0 place-items-center rounded-2xl",
-          "border border-white/20 bg-slate-950 text-white",
-          "shadow-[0_4px_12px_rgba(15,23,42,0.35),inset_0_1px_0_rgba(255,255,255,0.08)]",
-          "transition-transform duration-200 group-hover:scale-[1.06]",
-        )}
-      >
-        <Network className="h-5 w-5" aria-hidden="true" />
-      </span>
+      <Image
+        src="/logo.webp"
+        alt=""
+        width={64}
+        height={43}
+        className="h-10 w-auto shrink-0 object-contain transition-transform duration-200 group-hover:scale-[1.06]"
+      />
 
       <span className="min-w-0">
         <span className="block truncate text-sm font-semibold tracking-tight text-slate-950">
@@ -258,8 +256,10 @@ function DropdownMenu({
 
       {/* Liquid-glass dropdown panel */}
       <div
+        inert={!open}
         className={cn(
           "absolute right-0 top-full mt-2 w-80 origin-top",
+          "before:absolute before:inset-x-0 before:-top-2 before:h-2 before:content-['']",
           "rounded-[1.5rem]",
           "border border-slate-200 bg-white",
           "p-2",
@@ -323,9 +323,27 @@ function MobileNavbar({ pathname }: { pathname: string }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    const desktopQuery = window.matchMedia("(min-width: 1024px)");
+    const onBreakpointChange = () => {
+      if (desktopQuery.matches) setOpen(false);
+    };
+
+    document.addEventListener("keydown", onKeyDown);
+    desktopQuery.addEventListener("change", onBreakpointChange);
+    onBreakpointChange();
+
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", onKeyDown);
+      desktopQuery.removeEventListener("change", onBreakpointChange);
     };
   }, [open]);
 
@@ -356,6 +374,7 @@ function MobileNavbar({ pathname }: { pathname: string }) {
       {/* Mobile sheet */}
       <div
         id="mobile-menu"
+        inert={!open}
         className={cn(
           "absolute left-3 right-3 top-[5.25rem] origin-top",
           "rounded-[1.75rem]",

@@ -1,0 +1,79 @@
+/* Controls shared by the standalone graph pages. Graph data and colors remain in their source files. */
+#mynetwork {
+  float: none !important;
+  width: 100% !important;
+  height: min(72vh, 760px) !important;
+  min-height: 420px;
+}
+.graph-info,
+.graph-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 12px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #334155;
+  font: 13px/1.4 Arial, sans-serif;
+}
+.graph-toolbar button,
+.fltBtn {
+  min-height: 36px;
+}
+.graph-toolbar button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+  color: #1e293b;
+  cursor: pointer;
+}
+.graph-toolbar button[aria-pressed="true"],
+.fltBtn[aria-pressed="true"] {
+  border-color: #0f172a;
+  background: #0f172a;
+  color: white;
+}
+.graph-toolbar button:focus-visible,
+.fltBtn:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 2px;
+}
+.graph-swatch {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  flex: none;
+  border: 1px solid rgba(15, 23, 42, .25);
+  border-radius: 50%;
+  background: var(--swatch-color, #64748b);
+}
+.graph-status {
+  margin-left: auto;
+  font-size: 12px;
+  color: #475569;
+}
+#loadingBar .outerBorder {
+  top: 42%;
+  width: min(600px, calc(100% - 32px));
+}
+#loadingBar #border {
+  width: calc(100% - 92px);
+}
+#loadingBar #text {
+  left: auto;
+  right: 8px;
+}
+#loadingBar #bar {
+  max-width: 100%;
+}
+@media (max-width: 640px) {
+  #mynetwork { min-height: 360px; }
+  .graph-status { flex-basis: 100%; margin-left: 0; }
+}

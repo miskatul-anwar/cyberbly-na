@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "check:data": "python3 scripts/check-visualization-data.py",
     "start": "next start",
     "lint": "next lint"
   },

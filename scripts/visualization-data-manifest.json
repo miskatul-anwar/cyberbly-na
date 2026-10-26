@@ -1,0 +1,282 @@
+{
+  "public/figures/community_interaction/community_behavior_graphA.html": {
+    "nodes": {
+      "count": 39,
+      "sha256": "e4dcdf070dcc42868542f9c26fb58d33bf5d6e176a82a65bf884f8613fa2ba9f"
+    },
+    "edges": {
+      "count": 157,
+      "sha256": "ecbc5b1b50321735267c0140bcb7975d0c73e1247ab192f92d51ff6d6c41f35b"
+    }
+  },
+  "public/figures/community_interaction/community_context_graphB.html": {
+    "nodes": {
+      "count": 37,
+      "sha256": "9fb91cc9443a5d6768921dafe30b8e073f378ef375ceb7d26dbc9e3bb2726ad0"
+    },
+    "edges": {
+      "count": 186,
+      "sha256": "b5f9e4ae978c183218e2dcfce61c32c50e61239e8532711770e6fb31edd5267d"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_imgreedy_step_0.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "d20ea29853dec1983c00a5192f21b5e861029355ab38efdfde43c59bcc22968f"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "be4e0de320ecd14fba7d9e2cf77703639a4aebbe74d5be6ce8630a56a4b45b72"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_imgreedy_step_1.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "5575a5a47576971a49f4a4a2d4e2723a980bcd5cbf4d92a83203cf20139f561d"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "e195dbac721dff12decb1458baf4a171d1e10f4ec86661d30e9530ae5a791e68"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_imgreedy_step_2.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "7106e55905e81b7f02a17e4a4ebf8a6094b9739a9404b6dd8b95a104ef4a1713"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "ac13dc90c796d3239eaf09722f36035937d33b3fa9e3b95ef19a2678e1ed73ac"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_imgreedy_step_3.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "1eebcb79e53373e2fe31ab4e7143558d1f089f88fa7c39a19938525354165789"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "b5ac2974e4792f64cefbdfcd9d7c5480611908b8faa80f94f71642cd6228b09e"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_imgreedy_step_4.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "7899aed0b7303c683e1afef95089253da7681721b4d1b73eedaea42fdbe57fd6"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "0a3238715b87dc585cc92807394ac2eb534b2956cf2df983a3b3eaa337bde75d"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_bullyonly_step_0.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "cfe13ad9aa3df1c2ce5bdcf539d1c2042572dae1c8e36b86875faca8661250eb"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "be4e0de320ecd14fba7d9e2cf77703639a4aebbe74d5be6ce8630a56a4b45b72"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_bullyonly_step_1.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "aaf7e3be3e99aa36ade0943c9287dac5fcf0b46beab244cd377e59c642f21708"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "78f17916895338d73d34e227a15a312691569e5cf438a2b7586769703a9e5f6e"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_bullyonly_step_2.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "e9b83577e90d2c864edeae1783b465e5808e494e2806ff4e5781d0a29e7a20cf"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "f5f73af4b9b6af52a9e2ce6c03d8f4387af72fe4bec620457e083c2934e65e98"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_bullyonly_step_3.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "616ea3a24f364233a9fd67956c4c7e02406b92b62b05bf97cb0828cb970dfcd3"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "4f2f5e40ca812ee4346f5d74b6430effc0dbed026b89bde3bb2b38534e725fa2"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_bullyonly_step_4.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "b2c76adc4f8793e3fc2c6234bd78fe10d8bc151165636b65647fca35e0741d1a"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "b54ee08beccc97d6c2cd77c667f13ae430efba370087138d9cfdbd8c5af223bf"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_bullyonly_step_5.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "25063b3e02a1ffa0cae5dc897d16d3790c90e163f470a4f8fd53881e8e42b3c3"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "af4093c16dfcea586fb88532df0ef9e6859f80adf740b257e0ba102f3739cbad"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_weighteddegree_step_0.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "2bd9aa3ccdf5c535fbdcaa18085aca32b9a556464d37a1b136ba2a74b10b8bf1"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "be4e0de320ecd14fba7d9e2cf77703639a4aebbe74d5be6ce8630a56a4b45b72"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_weighteddegree_step_1.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "b30e99e3eb48e92609c8f84f8b7709134f12cc19103f1c4129cc370402b1c816"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "0afe5b1ba81edb28bc3605049798cf595931cf56e70525b9f3939080e08fb2cb"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_weighteddegree_step_2.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "5b127d8cbd4fee27440ed616a23ae8d670d1348fbf5808c6df8d9099aea7b98b"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "3e8e85d1f4666c788a2d2788510722a176371b0e5e4dfccf0f08a7e3d60a8ee6"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_weighteddegree_step_3.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "abcfacaf0e7169536abc9f0404882d36e080eaf14a8b31c2142a5ee73f78e9d7"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "383f1ba500faf907a9159244b2958c1ecd3a6701f13dd49a17a191edb5cfdb42"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_weighteddegree_step_4.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "ac63becbc68d5a10b94d2f6980473d4d3a0e082384a0ec0d86fad1e9f7979b6f"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "7f0dde948d271cdfbc3fe3a16fe551120c7486607fbc5797d19ae856f8e449b1"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_weighteddegree_step_5.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "5acbeb6c42e7c59f5f231511b401ad69e6e79d63b24de4efd5ffb51ba61dd60c"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "25f9433ec388789be32ccf1b08e439c0bde1dc04a3ed7f9fedcd221f8b3c52c9"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_pagerank_step_0.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "f243866240787a36bb03f7c878cdcc65cc8ca0b5fa40ed77083b38e0675b7c45"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "be4e0de320ecd14fba7d9e2cf77703639a4aebbe74d5be6ce8630a56a4b45b72"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_pagerank_step_1.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "bbe3b5689e26d5ec3fdf434e892efc6f5c5fb22d8c2d0d3b98135159a29d3283"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "9b630275bf95b4ba3240cd005f7a190c6f31c2302f2c9816a2022c4817029dc5"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_pagerank_step_2.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "33a24b9577616d5e04a286ac967186ca69e01a3a61244a86c8c7024168833062"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "a52bfba7ccc052348900a4ef7bc7ff01999948f74db87c563c912ca9082f749d"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_pagerank_step_3.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "246831b6fe0902075ede267e2e4b8d22e32c39f80a5c32131fd414232cb723d9"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "178a5935e526679a3487c70fe603a22f7e63234a9def6f2035da164ad848807b"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_pagerank_step_4.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "cb4413fe607255143d95cc8df285a4f827619c27fabbd0b4ee63ecf729660597"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "690a8c05983796067f3f6b29ee6ec36224b9c81c6838944f0fb0ff4186ca61ee"
+    }
+  },
+  "public/figures/diffusion_visualization/frames/frame_pagerank_step_5.html": {
+    "nodes": {
+      "count": 184,
+      "sha256": "3ca5e6275bf4be9edc357a9b5bdac49e5cab1c43121f69ac3a207e0ac0d18362"
+    },
+    "edges": {
+      "count": 5723,
+      "sha256": "898b1bc9dd55189803327946e277201f2e6226224b4bbcaf2f4d6f9686108c0d"
+    }
+  },
+  "public/figures/network_structure/perp-similarity-graph-minSim-0.80.html": {
+    "nodes": {
+      "count": 534,
+      "sha256": "3cb59514d49083c8d5d66c8030f25da1a87a0b7ad630a07f975d1d524a2f8681"
+    },
+    "edges": {
+      "count": 1315,
+      "sha256": "753cd740f556ee1883378c1e04abbf34fdd62a5f33b0dceeebdd30be7b720326"
+    }
+  },
+  "public/figures/network_structure/perp_subcommunity_network.html": {
+    "nodes": {
+      "count": 27,
+      "sha256": "6453498aacec84900dc9b9461c1119f21bbece27152983bd8ab544faeef231ed"
+    },
+    "edges": {
+      "count": 311,
+      "sha256": "8591b9c897bf8126b14ebb6df6d470f5993c1422554acb0fe0b20e3d71b8d2cc"
+    }
+  },
+  "public/figures/network_structure/perpetrator_community_network.html": {
+    "nodes": {
+      "count": 6,
+      "sha256": "7c24038d14560d1273df21bce6a13852dae11037c91d1ef88799c299c628d178"
+    },
+    "edges": {
+      "count": 15,
+      "sha256": "3a450308cd2ca3ae07c440c101e0cc59156c9fa7574daa14f402d6fc5bcd04be"
+    }
+  }
+}
