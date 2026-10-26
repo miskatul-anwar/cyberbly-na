@@ -140,9 +140,9 @@ export default function Navbar() {
 // ---------------------------------------------------------------------------
 function BrandLogo() {
   return (
-    <Link
-      href="/"
-      aria-label="Go to homepage"
+    <a
+      href="https://bdai.bike-csecu.com"
+      aria-label="Visit BDAI website"
       className={cn(
         "group flex min-w-0 items-center gap-3 rounded-2xl px-2 py-2",
         "outline-none transition-all duration-200",
@@ -165,7 +165,7 @@ function BrandLogo() {
           Anonymous review-only access
         </span>
       </span>
-    </Link>
+    </a>
   );
 }
 
@@ -219,17 +219,22 @@ function DropdownMenu({
         setOpen(false);
       }
     }
+    function onEscape(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setOpen(false);
+        ref.current?.querySelector("button")?.focus();
+      }
+    }
     document.addEventListener("mousedown", onOutsideClick);
-    return () => document.removeEventListener("mousedown", onOutsideClick);
+    document.addEventListener("keydown", onEscape);
+    return () => {
+      document.removeEventListener("mousedown", onOutsideClick);
+      document.removeEventListener("keydown", onEscape);
+    };
   }, [open]);
 
   return (
-    <div
-      ref={ref}
-      className="relative"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
-    >
+    <div ref={ref} className="relative">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -259,7 +264,6 @@ function DropdownMenu({
         inert={!open}
         className={cn(
           "absolute right-0 top-full mt-2 w-80 origin-top",
-          "before:absolute before:inset-x-0 before:-top-2 before:h-2 before:content-['']",
           "rounded-[1.5rem]",
           "border border-slate-200 bg-white",
           "p-2",
