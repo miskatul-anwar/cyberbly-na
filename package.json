@@ -7,13 +7,15 @@
     "build": "next build",
     "check:data": "python3 scripts/check-visualization-data.py",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:native-data": "python3 scripts/check-native-data.py"
   },
   "dependencies": {
     "lucide-react": "^0.416.0",
     "next": "^16.2.9",
     "react": "19.2.6",
-    "react-dom": "19.2.6"
+    "react-dom": "19.2.6",
+    "vis-network": "9.1.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.0",

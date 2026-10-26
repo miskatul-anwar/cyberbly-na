@@ -8,6 +8,7 @@ import {
   Layers,
 } from "lucide-react";
 import type { Visualization } from "@/lib/visualizations";
+import NativeGraph from "@/components/NativeGraph";
 import { cn } from "@/lib/utils";
 
 type VisualizationViewerProps = {
@@ -110,14 +111,14 @@ export default function VisualizationViewer({
                 "focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2",
               )}
             >
-              Direct Open
+              Original HTML
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         </div>
       </header>
 
-      {/* iframe panel */}
+      {/* Native graph panel */}
       <section
         className={cn(
           "overflow-hidden rounded-[1.75rem]",
@@ -126,11 +127,7 @@ export default function VisualizationViewer({
           "backdrop-blur-2xl",
         )}
       >
-        <iframe
-          src={visualization.assetPath}
-          title={visualization.title}
-          className="h-screen w-full border-none"
-        />
+        <NativeGraph slug={visualization.slug} />
       </section>
     </article>
   );
