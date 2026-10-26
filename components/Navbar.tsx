@@ -148,10 +148,10 @@ function BrandLogo() {
       )}
     >
       <Image
-        src="/logo.webp"
+        src="/icon.svg"
         alt=""
-        width={64}
-        height={43}
+        width={40}
+        height={40}
         className="h-10 w-auto shrink-0 object-contain transition-transform duration-200 group-hover:scale-[1.06]"
       />
 
